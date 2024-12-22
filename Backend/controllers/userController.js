@@ -13,23 +13,23 @@ const simpledata = (req, res) => {
     res.send("error found", err);
   }
 };
-// const chooselanguage = async (req, res) => {
-//   try {
-//     const { language } = req.params;
+const chooselanguage = async (req, res) => {
+  try {
+    const { language } = req.params;
 
-//     // Simply send back the language
-//     const data = await User({
-//       chooseyourlanguage: language,
-//     });
+    // Simply send back the language
+    const data = await User({
+      chooseyourlanguage: language,
+    });
 
-//     res.status(200).json({
-//       message: "Language choice received",
-//       data,
-//     });
-//   } catch (err) {
-//     res.status(500).json({ message: "Error occurred", error: err.message });
-//   }
-// };
+    res.status(200).json({
+      message: "Language choice received",
+      data,
+    });
+  } catch (err) {
+    res.status(500).json({ message: "Error occurred", error: err.message });
+  }
+};
 const register = async (req, res) => {
   try {
     const { name, username, email, password } = req.body;
